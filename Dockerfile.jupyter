@@ -1,0 +1,6 @@
+FROM spark:3.5.1-python3
+USER root
+RUN pip install --no-cache-dir jupyterlab pyspark==3.5.1 kafka-python-ng boto3 pandas
+ENV PYSPARK_PYTHON=python3 PYSPARK_DRIVER_PYTHON=python3
+WORKDIR /workspace
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--ServerApp.token="]

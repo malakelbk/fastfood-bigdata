@@ -1,0 +1,3 @@
+data/*.jsonl
+.ipynb_checkpoints/
+__pycache__/
