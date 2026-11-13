@@ -13,6 +13,7 @@ def get_spark(app_name, extra_packages=None, extra_conf=None):
          .config("spark.driver.host", "jupyter")
          .config("spark.driver.bindAddress", "0.0.0.0")
          .config("spark.executor.memory", "512m")
+         .config("spark.sql.shuffle.partitions", "8")  
          .config("spark.jars.packages", ",".join(packages))
          .config("spark.jars.repositories", "https://repos.spark-packages.org")
          # MinIO via S3A
